@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <!-- Very simple example -->
+    <!-- Set value by property -->
+
+    <bean id="helloWorld" class="pl.klimas7.learnSpring.xml.HelloWorld">
+        <property name="message" value="Hello World!"/>
+    </bean>
+
+    <!-- Set value by constructor -->
+
+    <bean id="helloWorldByConstructor" class="pl.klimas7.learnSpring.xml.HelloWorld" scope="">
+        <constructor-arg value="Hello World By Constructor!"/>
+    </bean>
+
+    <!-- Works example -->
+    <!-- Property as list and scope -->
+
+    <bean id="hardWorker" class="pl.klimas7.learnSpring.xml.HardWorker" scope="singleton"/>
+    <bean id="lazyWorker" class="pl.klimas7.learnSpring.xml.LazyWorker" scope="prototype"/>
+
+    <bean id="works" class="pl.klimas7.learnSpring.xml.Works">
+        <property name="workers">
+            <list>
+                <ref bean="hardWorker"/>
+                <ref bean="lazyWorker"/>
+                <ref bean="lazyWorker"/>
+                <ref bean="hardWorker"/>
+            </list>
+        </property>
+    </bean>
+
+</beans>
