@@ -1,7 +1,10 @@
 package pl.klimas7.learnSpring.annotation;
 
+import org.springframework.stereotype.Component;
 
-public class HelloWorld {
+@Component
+public class HelloWorld
+{
     private String message;
 
     public HelloWorld()
@@ -13,11 +16,13 @@ public class HelloWorld {
         this.message = message;
     }
 
-    public void setMessage(String message) {
+    public void setMessage(String message)
+    {
         this.message = message;
     }
 
-    public void getMessage() {
+    public void getMessage()
+    {
         System.out.println("Your Message : " + message);
     }
 

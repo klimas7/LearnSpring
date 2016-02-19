@@ -1,6 +1,7 @@
 package pl.klimas7.learnSpring.xml;
 
 import java.util.Collection;
+import java.util.Objects;
 
 
 public class Works {
@@ -12,6 +13,6 @@ public class Works {
 
     public void doWork()
     {
-        workers.stream().forEach(worker -> worker.doWork());
+        workers.stream().filter(Objects::nonNull).forEach(worker -> worker.doWork());
     }
 }
