@@ -23,6 +23,7 @@
 
     <bean id="hardWorker" class="pl.klimas7.learnSpring.xml.HardWorker" scope="singleton"/>
     <bean id="lazyWorker" class="pl.klimas7.learnSpring.xml.LazyWorker" scope="prototype"/>
+    <bean id="bestWorker" class="pl.klimas7.learnSpring.xml.HardWorker" scope="singleton"/>
 
     <bean id="works" class="pl.klimas7.learnSpring.xml.Works">
         <property name="workers">
@@ -34,6 +35,8 @@
                 <null/>
             </list>
         </property>
+        <property name="bestWorker" ref="bestWorker"/>
+        <property name="theMostLazyWorker" ref="lazyWorker"/>
     </bean>
 
 </beans>

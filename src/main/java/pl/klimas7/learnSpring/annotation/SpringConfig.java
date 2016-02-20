@@ -27,6 +27,12 @@ public class SpringConfig
     }
 
     @Bean
+    public Worker bestWorker()
+    {
+        return (Worker) ctx.getBean("hardWorker");
+    }
+
+    @Bean
     public Worker hardWorkerOne()
     {
         return (Worker) ctx.getBean("hardWorker");
@@ -42,7 +48,7 @@ public class SpringConfig
     @Scope(value = "prototype")
     public Worker lazyWorkerOne()
     {
-        return new LazyWorker();
+        return (Worker) ctx.getBean("lazyWorker");
     }
 
     @Bean
